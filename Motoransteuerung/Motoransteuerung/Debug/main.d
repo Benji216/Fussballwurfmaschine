@@ -10,6 +10,8 @@ main.d main.o: .././main.c \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\version.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
+ c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h \
+ c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  .././LCD1zeil.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
@@ -37,6 +39,10 @@ c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu
 c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h:
 
 c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
+
+c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdlib.h:
+
+c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h:
 
 .././LCD1zeil.h:
 

@@ -1,9 +1,9 @@
-#define F_CPU 8000000UL
-
 #include <avr/io.h>
+#include <stdlib.h>
 #include "LCD1zeil.h"
 #include <util/delay.h>
 #include "Motoransteuerung.h"
+
 
 int main (void)
 {
@@ -14,9 +14,9 @@ int main (void)
 	MCUCR = MCUCR|(1<<JTD);
 	
 	 char buffer[20];    //Wird benötigt um am LCD Ziffern auszugeben
-	 int adc_h;
-	 float Vin;
-	 int h = 0;
+	 unsigned char adc_h;
+	 unsigned char Vin;
+	 unsigned char h = 0;
 	 
 	allinit();
 	
@@ -26,24 +26,33 @@ int main (void)
 		while(ADCSRA & (1<<ADSC)); //warten auf Wandlungsende
 		adc_h = ADCL;
 		adc_h = ADCH;
+		adc_h = adc_h>>1;
 		
 		if(adc_h != h)
 		{
-			Vin = (adc_h*5)/256;
-			dtostrf(Vin, 3, 2, buffer);
+			Vin = adc_h;
+			if(Vin >=0 && Vin <= 27)
+			{
+				Vin = 0;
+			}
+			else
+			{
+				Vin = Vin - 27;
+			}
+			
+			OCR4A = Vin * 2; //PWM Tastverhältnis einstellen
+			
+			itoa (Vin,buffer,10);
 			LCD_cmd(0x01);
 			LCD_string(buffer);
 			h = adc_h;
-			_delay_ms(500);
+			_delay_ms(200);
+
+			
 		}
 		ADCSRA = ADCSRA|(1<<ADSC);  //Wandler neu starten
 		
-		/*OCR0A++;
-		if(OCR0A>=256)
-		{
-			OCR0A = 0;
-		}
-		_delay_ms(50);*/
+		
 		
 	}
 	return 0;
