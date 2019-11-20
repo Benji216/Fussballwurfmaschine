@@ -45,8 +45,8 @@
 #define E	PD5
 #define RS	PD4
 
-#define DDRLCD DDRD
-#define PORTLCD PORTD
+#define DDRLCD DDRB
+#define PORTLCD PORTB
 // PORT Zuordnung muss im gesamten LCD.h angepasst werden!!!
 // d.h. PORTD und DDRD durch gewünschten anderen Port ersetzen
 //

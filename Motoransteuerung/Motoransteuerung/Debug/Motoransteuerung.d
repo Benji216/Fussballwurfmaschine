@@ -11,6 +11,7 @@ Motoransteuerung.d Motoransteuerung.o: .././Motoransteuerung.c \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\fuse.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h \
  .././LCD1zeil.h \
+ c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
@@ -39,6 +40,8 @@ c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu
 c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\lock.h:
 
 .././LCD1zeil.h:
+
+c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
 c:\programmieren\atmel\ studio_7.0\atmel\ studio_7.0\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
 
