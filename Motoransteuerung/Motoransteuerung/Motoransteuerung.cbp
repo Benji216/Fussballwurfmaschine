@@ -31,9 +31,10 @@
 			</Environment>
 		</Build>
 		<Compiler>
+			<Add option="-O1" />
 			<Add option="-Wall" />
 			<Add option="-mmcu=atmega32u4" />
-			<Add option="-DF_CPU=16000000UL" />
+			<Add option="-DF_CPU=8000000UL" />
 		</Compiler>
 		<Linker>
 			<Add option="-mmcu=atmega32u4" />
@@ -44,6 +45,12 @@
 			<Add after="avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).hex" />
 			<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_DIR)$(TARGET_OUTPUT_BASENAME).eep" />
 		</ExtraCommands>
+		<Unit filename="LCD1zeil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Motoransteuerung.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
