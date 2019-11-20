@@ -27,7 +27,11 @@ int main (void)
 	{
 		if(duty1 >= 0 && duty1 <= 100)
 		{
-			OCR4A = duty1 *  2;//PWM Tastverhältnis einstellen
+			OCR4A = duty1 *  2;//PWM1 Tastverhältnis einstellen
+		}
+		if(duty2 >= 0 && duty2 <= 100)
+		{
+			OCR4B = duty2 *  2;//PWM2 Tastverhältnis einstellen
 		}
 			/*itoa (duty,buffer,10);
 			LCD_cmd(0x01);
@@ -139,11 +143,11 @@ ISR (TIMER0_OVF_vect)
 				}
 				break;
 				case 4:
-				if ((PIND & (1<<PIND3)) == 0x00) //wenn PD0 = LOW
+				if ((PIND & (1<<PIND3)) == 0x00) //wenn PD3 = LOW
 				{
-					if(duty2 < 100)
+					if(duty2 > 0)
 					{
-						duty2++;
+						duty2--;
 					}
 				}
 				else

@@ -57,7 +57,6 @@ void allinit(void)
 	TCCR4D = TCCR4D | (1<<FPAC4);// Analog comparator auswählen
 	 
 	OCR4C = 200; //TOP für f_PWM = 10 kHz, f_PWM = f_CLK_T4/OCR4C
-	OCR4B = 100; //1:1 Tastverhältnis (ohne Dead Time)
 	 
 	 
 	TCCR4B = TCCR4B &~(1<<CS43);
