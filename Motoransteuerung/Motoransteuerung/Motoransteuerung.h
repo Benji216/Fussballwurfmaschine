@@ -12,7 +12,7 @@
 
 
 void allinit(void);
-
+void Fault_Protection(void);
 
 
 #endif /* MOTORANSTEUERUNG_H_ */

@@ -31,7 +31,7 @@ void allinit(void)
 	DDRE = DDRE &~(1<<DDE6);//PE6 Input (AIN+ Für Komperator)
 	DDRF = DDRF &~(1<<DDF4); //PF4 INPUT (AIN- ADC4)
 	 
-	DDRF = DDRF &~(1<<DDF0); //PF0 INPUT (ADC0 für Poti)
+	//DDRF = DDRF &~(1<<DDF0); //PF0 INPUT (ADC0 für Poti)
 	 
 	DDRD = DDRD &~(1<<DDD0) &~(1<<DDD1) &~(1<<DDD2) &~(1<<DDD3); //PD0-3 Input (External Interrupt0-3)
 	PORTD = PORTD |(1<<PORTD0) |(1<<PORTD1) |(1<<PORTD2) |(1<<PORTD3);//PD0-3 Pull up ein
@@ -108,7 +108,7 @@ void allinit(void)
 void Fault_Protection(void)
 {
 	ADCSRA = ADCSRA &~(1<<ADEN); //ADC aus
-	ACSR = ACSR &~ (1<<ACD); // Comparator ein
+	//ACSR = ACSR &~ (1<<ACD); // Comparator ein
 	ADCSRB = ADCSRB | (1<<ACME); //AIN- hängt am ADC Multiplexer
 	ADMUX = ADMUX | (1<<MUX2); //ADC4 als AIN- Input wählen
 }

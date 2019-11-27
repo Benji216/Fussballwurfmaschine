@@ -17,7 +17,7 @@ int main (void)
 	 
 	allinit();
 	
-	//Fault_Protection();
+	Fault_Protection();
 	
 	
 	while(1)
