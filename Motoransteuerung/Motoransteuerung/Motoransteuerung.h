@@ -9,10 +9,11 @@
 #ifndef MOTORANSTEUERUNG_H_
 #define MOTORANSTEUERUNG_H_
 
-
+#define MAXDREHZAHL 2500
+#define VCC 5
 
 void allinit(void);
-void Fault_Protection(void);
+unsigned char LinkeDrehzahlmessung(void);
 
 
 #endif /* MOTORANSTEUERUNG_H_ */

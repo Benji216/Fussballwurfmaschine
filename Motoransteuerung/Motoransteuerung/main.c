@@ -5,21 +5,21 @@
 #include <util/delay.h>
 #include "Motoransteuerung.h"
 
+
 unsigned char duty1 = 0;
 unsigned char duty2 = 0;
 unsigned char dutyh = 0;
 unsigned short int timer0h = 0;
 unsigned short int timer0zeit = 0;
+unsigned char drehmessh = 0;
 
 int main (void)
 {
-	 char buffer[20];    //Wird benötigt um am LCD Ziffern auszugeben
-	 
+	 //char buffer[20];    //Wird benötigt um am LCD Ziffern auszugeben
+
 	allinit();
-	
-	Fault_Protection();
-	
-	
+
+
 	while(1)
 	{
 		LCD_cmd(0xC5); //gehe zu 2. Zeile, 6. Position
@@ -32,6 +32,11 @@ int main (void)
 		{
 			OCR4B = duty2 *  2;//PWM2 Tastverhältnis einstellen
 		}
+		if(drehmessh)
+        {
+
+            LinkeDrehzahlmessung();
+        }
 	}
 	return 0;
 }
@@ -149,8 +154,8 @@ ISR (TIMER0_OVF_vect)
 		timer0zeit = 50; // 50 ms
 		timer0h = 0;
 	}
-	
-	
+
+
 	TCNT0 = 256-125; //Reinitialisierung
 }
 

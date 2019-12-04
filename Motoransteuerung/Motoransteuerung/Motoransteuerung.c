@@ -31,7 +31,7 @@ void allinit(void)
 	DDRE = DDRE &~(1<<DDE6);//PE6 Input (AIN+ Für Komperator)
 	DDRF = DDRF &~(1<<DDF4); //PF4 INPUT (AIN- ADC4)
 
-	//DDRF = DDRF &~(1<<DDF0); //PF0 INPUT (ADC0 für Poti)
+	DDRF = DDRF &~(1<<DDF0); //PF0 INPUT (ADC0 für Poti)
 
 	DDRD = DDRD &~(1<<DDD0) &~(1<<DDD1) &~(1<<DDD2) &~(1<<DDD3); //PD0-3 Input (External Interrupt0-3)
 	PORTD = PORTD |(1<<PORTD0) |(1<<PORTD1) |(1<<PORTD2) |(1<<PORTD3);//PD0-3 Pull up ein
@@ -46,13 +46,13 @@ void allinit(void)
 	TCCR4D = TCCR4D &~(1<<WGM40); //Fast PWM Mode
 
 	TCCR4A = TCCR4A | (1<<COM4A1);
-	TCCR4A = TCCR4A &~ (1<<COM4A0); //COM4A1:0=2, OC4A(PC7) Pin ein
+	TCCR4A = TCCR4A | (1<<COM4A0); //COM4A1:0=3, invert OC4A(PC7) Pin ein
 
 	TCCR4A = TCCR4A | (1<<COM4B1);
-	TCCR4A = TCCR4A &~ (1<<COM4B0); //COM4B1:0=2, OC4B(PB6) Pin ein
+	TCCR4A = TCCR4A | (1<<COM4B0); //COM4B1:0=3, invert OC4B(PB6) Pin ein
 
 
-	TCCR4D = TCCR4D | (1<<FPEN4);//Fault Protection Enable
+	//TCCR4D = TCCR4D | (1<<FPEN4);//Fault Protection Enable
 	TCCR4D = TCCR4D | (1<<FPIE4); //Fault Protection Interrupt Enable
 	ADCSRA = ADCSRA &~(1<<ADEN); //ADC aus Komparator ein
 	TCCR4D = TCCR4D | (1<<FPAC4);// Analog comparator für AIN+ auswählen
@@ -109,16 +109,19 @@ unsigned char LinkeDrehzahlmessung(void)
 	adc_h = ADCH;*/
 	adc_h = ADCW;
 
-    ADCSRA = ADCSRA &~(1<<ADEN); //ADC aus
+    adc_h = adc_h/VCC * MAXDREHZAHL;
+
+
+
+    ADCSRA = ADCSRA &~(1<<ADEN); //ADC aus Komparator ein
     ADMUX = ADMUX | (1<<MUX2); //ADC4 als AIN- Input wählen
+
+    TCCR4B = TCCR4B &~(1<<CS43);
+	TCCR4B = TCCR4B &~(1<<CS42);
+	TCCR4B = TCCR4B | (1<<CS41);
+	TCCR4B = TCCR4B | (1<<CS40); //Timer4 Prescaler 4, Start PWM
+
 
 	return(adc_h);
 }
 
-void Fault_Protection(void)
-{
-
-	//ACSR = ACSR &~ (1<<ACD); // Comparator ein
-
-
-}
