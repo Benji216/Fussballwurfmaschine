@@ -85,9 +85,10 @@ void allinit(void)
 
 	sei();
 }
-unsigned char LinkeDrehzahlmessung(void)
+unsigned char RechteDrehzahlmessung(void)
 {
-	unsigned short int adc_h;
+	unsigned int adc_h;
+	unsigned int drehzahl;
 
 
 	TCCR4B = TCCR4B &~(1<<CS43);
@@ -105,11 +106,12 @@ unsigned char LinkeDrehzahlmessung(void)
 
 	while(ADCSRA & (1<<ADSC)); //warten auf Wandlungsende
 
-	/*adc_h = ADCL;
-	adc_h = ADCH;*/
-	adc_h = ADCW;
+	//adc_h = ADCW;
 
-    adc_h = adc_h/VCC * MAXDREHZAHL;
+    drehzahl = ADCL;
+    adc_h = ADCH & 0b00000011;
+    drehzahl = drehzahl | (adc_h << 8);
+    //adc_h = adc_h/VCC * MAXDREHZAHL;
 
 
 

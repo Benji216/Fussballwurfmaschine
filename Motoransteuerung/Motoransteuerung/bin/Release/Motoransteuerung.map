@@ -1,11 +1,20 @@
 Archive member included to satisfy reference by file (symbol)
 
-c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                              obj\Release\Motoransteuerung.o (__udivmodhi4)
 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o (exit)
 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
                               obj\Release\main.o (__do_clear_bss)
+c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+                              obj\Release\main.o (__itoa_ncheck)
+c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+                              c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o) (__utoa_common)
+c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strrev.o)
+                              c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o) (strrev)
+
+Allocating common symbols
+Common symbol       size              file
+
+drehzahl            0x2               obj\Release\main.o
 
 Memory Configuration
 
@@ -132,7 +141,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x6ee
+.text           0x00000000      0x7b4
  *(.vectors)
  .vectors       0x00000000       0xac c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
                 0x00000000                __vector_default
@@ -234,68 +243,66 @@ END GROUP
                 0x0000023e                LCD_cmd
                 0x000002ae                LCD_string
                 0x000002c6                LCD_secCursor
- .text          0x000002cc      0x206 obj\Release\main.o
+ .text          0x000002cc      0x26c obj\Release\main.o
                 0x000002cc                __vector_42
                 0x000002f4                __vector_1
-                0x00000336                __vector_2
-                0x00000378                __vector_3
-                0x000003c2                __vector_4
-                0x00000404                __vector_23
- .text          0x000004d2      0x1b6 obj\Release\Motoransteuerung.o
-                0x000004d2                allinit
-                0x000005d0                LinkeDrehzahlmessung
- .text          0x00000688        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .text          0x00000688        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
- .text          0x00000688        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
-                0x00000688                . = ALIGN (0x2)
+                0x00000344                __vector_2
+                0x00000396                __vector_3
+                0x000003f0                __vector_4
+                0x00000442                __vector_23
+ .text          0x00000538      0x1a8 obj\Release\Motoransteuerung.o
+                0x00000538                allinit
+                0x00000636                RechteDrehzahlmessung
+ .text          0x000006e0        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text          0x000006e0        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000006e0        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+ .text          0x000006e0        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+ .text          0x000006e0        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x000006e0                . = ALIGN (0x2)
  *(.text.*)
- .text.startup  0x00000688       0x3a obj\Release\main.o
-                0x00000688                main
+ .text.startup  0x000006e0       0x66 obj\Release\main.o
+                0x000006e0                main
  .text.libgcc.mul
-                0x000006c2        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.div
-                0x000006c2       0x28 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                0x000006c2                __udivmodhi4
- .text.libgcc   0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.prologue
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.builtins
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fmul
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.mul
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.div
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.prologue
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.builtins
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fmul
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
- .text.libgcc.mul
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.div
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.prologue
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.builtins
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.fmul
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc.fixed
-                0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
-                0x000006ea                . = ALIGN (0x2)
+                0x00000746        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x00000746       0x16 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+                0x00000746                __itoa_ncheck
+ .text.avr-libc
+                0x0000075c       0x34 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+                0x0000075c                __utoa_ncheck
+                0x0000075e                __utoa_common
+ .text.avr-libc
+                0x00000790       0x20 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00000790                strrev
+                0x000007b0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000006ea        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000006ea                _exit
-                0x000006ea                exit
+ .fini9         0x000007b0        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000007b0                _exit
+                0x000007b0                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -314,20 +321,22 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000006ea        0x4 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000007b0        0x4 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000006ee                _etext = .
+                0x000007b4                _etext = .
 
-.data           0x00800100        0x0 load address 0x000006ee
+.data           0x00800100        0x0 load address 0x000007b4
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
  .data          0x00800100        0x0 obj\Release\LCD1zeil.o
  .data          0x00800100        0x0 obj\Release\main.o
  .data          0x00800100        0x0 obj\Release\Motoransteuerung.o
- .data          0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
  .data          0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+ .data          0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+ .data          0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strrev.o)
  *(.data*)
  *(.gnu.linkonce.d*)
  *(.rodata)
@@ -337,33 +346,39 @@ END GROUP
                 0x00800100                _edata = .
                 [!provide]                PROVIDE (__data_end, .)
 
-.bss            0x00800100        0x8
+.bss            0x00800100        0xc
                 0x00800100                PROVIDE (__bss_start, .)
  *(.bss)
  .bss           0x00800100        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
  .bss           0x00800100        0x0 obj\Release\LCD1zeil.o
- .bss           0x00800100        0x8 obj\Release\main.o
+ .bss           0x00800100        0xa obj\Release\main.o
                 0x00800100                drehmessh
                 0x00800101                timer0zeit
                 0x00800103                timer0h
                 0x00800105                dutyh
                 0x00800106                duty2
-                0x00800107                duty1
- .bss           0x00800108        0x0 obj\Release\Motoransteuerung.o
- .bss           0x00800108        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x00800108        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
- .bss           0x00800108        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                0x00800107                LCDduty2
+                0x00800108                duty1
+                0x00800109                LCDduty1
+ .bss           0x0080010a        0x0 obj\Release\Motoransteuerung.o
+ .bss           0x0080010a        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .bss           0x0080010a        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0080010a        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+ .bss           0x0080010a        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+ .bss           0x0080010a        0x0 c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strrev.o)
  *(.bss*)
  *(COMMON)
-                0x00800108                PROVIDE (__bss_end, .)
-                0x000006ee                __data_load_start = LOADADDR (.data)
-                0x000006ee                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080010a        0x2 obj\Release\main.o
+                0x0080010a                drehzahl
+                0x0080010c                PROVIDE (__bss_end, .)
+                0x000007b4                __data_load_start = LOADADDR (.data)
+                0x000007b4                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800108        0x0
+.noinit         0x0080010c        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800108                _end = .
+                0x0080010c                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -495,9 +510,11 @@ LCD_init                                          obj\Release\LCD1zeil.o
                                                   obj\Release\Motoransteuerung.o
 LCD_secCursor                                     obj\Release\LCD1zeil.o
 LCD_send                                          obj\Release\LCD1zeil.o
-                                                  obj\Release\main.o
 LCD_string                                        obj\Release\LCD1zeil.o
-LinkeDrehzahlmessung                              obj\Release\Motoransteuerung.o
+                                                  obj\Release\main.o
+LCDduty1                                          obj\Release\main.o
+LCDduty2                                          obj\Release\main.o
+RechteDrehzahlmessung                             obj\Release\Motoransteuerung.o
                                                   obj\Release\main.o
 __FUSE_REGION_LENGTH__                            c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
 __bad_interrupt                                   c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
@@ -507,9 +524,12 @@ __do_clear_bss                                    c:/programmieren/atmel studio_
                                                   obj\Release\main.o
 __heap_end                                        c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
 __init                                            c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
+__itoa_ncheck                                     c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+                                                  obj\Release\main.o
 __stack                                           c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
-__udivmodhi4                                      c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodhi4.o)
-                                                  obj\Release\Motoransteuerung.o
+__utoa_common                                     c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
+                                                  c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(itoa_ncheck.o)
+__utoa_ncheck                                     c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
 __vector_1                                        obj\Release\main.o
                                                   c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
 __vector_10                                       c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
@@ -565,6 +585,7 @@ allinit                                           obj\Release\Motoransteuerung.o
                                                   obj\Release\main.o
 delay_ms                                          obj\Release\LCD1zeil.o
 drehmessh                                         obj\Release\main.o
+drehzahl                                          obj\Release\main.o
 duty1                                             obj\Release\main.o
 duty2                                             obj\Release\main.o
 dutyh                                             obj\Release\main.o
@@ -572,5 +593,7 @@ exit                                              c:/programmieren/atmel studio_
                                                   c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
 main                                              obj\Release\main.o
                                                   c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/crtatmega32u4.o
+strrev                                            c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(strrev.o)
+                                                  c:/programmieren/atmel studio_7.0/atmel studio_7.0/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(utoa_ncheck.o)
 timer0h                                           obj\Release\main.o
 timer0zeit                                        obj\Release\main.o

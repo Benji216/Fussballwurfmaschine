@@ -13,7 +13,7 @@
 #define VCC 5
 
 void allinit(void);
-unsigned char LinkeDrehzahlmessung(void);
+unsigned char RechteDrehzahlmessung(void);
 
 
 #endif /* MOTORANSTEUERUNG_H_ */
