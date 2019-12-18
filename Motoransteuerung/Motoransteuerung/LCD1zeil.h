@@ -55,6 +55,8 @@
 #define F_CPU 8000000UL
 
 // prototypen:
+void Enable2(void);
+void Enable3(void);
 void LCD_init(void);
 void LCD_send(char data);
 void LCD_cmd(char data);

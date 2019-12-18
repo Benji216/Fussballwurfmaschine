@@ -17,16 +17,15 @@ unsigned int drehzahl;
 
 int main (void)
 {
-	 char buffer[20];    //Wird benötigt um am LCD Ziffern auszugeben
-
+    char buffer[20];    //Wird benötigt um am LCD Ziffern auszugeben
 	allinit();
-
 
 	while(1)
 	{
-
         drehzahl = RechteDrehzahlmessung();
-        LCD_cmd(0xC5); //gehe zu 2. Zeile, 6. Position
+
+        LCD_cmd(0x01); // LCD löschen
+        LCD_cmd(0x80); //gehe zu 2. Zeile, 6. Position
         itoa (drehzahl, buffer, 10);
         LCD_string(buffer);
 

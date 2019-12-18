@@ -6,6 +6,7 @@
  */
 
 #include <avr/io.h>
+#include <stdlib.h>
 #include "LCD1zeil.h"
 #include <avr/interrupt.h>
 #include <util/delay.h>
@@ -85,10 +86,10 @@ void allinit(void)
 
 	sei();
 }
-unsigned char RechteDrehzahlmessung(void)
+unsigned short int RechteDrehzahlmessung(void)
 {
-	unsigned int adc_h;
-	unsigned int drehzahl;
+	unsigned char adc_h;
+	unsigned short int drehzahl;
 
 
 	TCCR4B = TCCR4B &~(1<<CS43);
@@ -106,12 +107,14 @@ unsigned char RechteDrehzahlmessung(void)
 
 	while(ADCSRA & (1<<ADSC)); //warten auf Wandlungsende
 
-	//adc_h = ADCW;
 
-    drehzahl = ADCL;
-    adc_h = ADCH & 0b00000011;
-    drehzahl = drehzahl | (adc_h << 8);
-    //adc_h = adc_h/VCC * MAXDREHZAHL;
+
+    adc_h = ADCL;
+    drehzahl = ADCH & 0b00000011;
+    drehzahl = drehzahl <<8;
+    drehzahl = drehzahl | adc_h; // Wert 0 bis 1023
+
+    drehzahl = (float)MAXDREHZAHL/1023 * drehzahl;  //Drehzahl ausrechnen
 
 
 
@@ -124,6 +127,6 @@ unsigned char RechteDrehzahlmessung(void)
 	TCCR4B = TCCR4B | (1<<CS40); //Timer4 Prescaler 4, Start PWM
 
 
-	return(adc_h);
+	return(drehzahl);
 }
 

@@ -59,6 +59,22 @@ void Enable(void)		//Hilfsfunktion: H=>L Flanke der Enable Leitung (E)
 	delay_ms(5);
 }
 
+void Enable2(void)		//Hilfsfunktion: H=>L Flanke der Enable Leitung (E)
+{
+	PORTLCD = PORTLCD | (1<<E);	//E = 1
+	_delay_us(100);
+	PORTLCD = PORTLCD &~(1<<E);	//E = 0
+	_delay_us(100);
+}
+
+void Enable3(void)		//Hilfsfunktion: H=>L Flanke der Enable Leitung (E)
+{
+	PORTLCD = PORTLCD | (1<<E);	//E = 1
+	delay_ms(1);
+	PORTLCD = PORTLCD &~(1<<E);	//E = 0
+	delay_ms(1);
+}
+
 ////////////////////////////////////////////////////////////////////////////
 //
 // LCD_init(..) Initialisierung: Port D, 4-Bit Mode, 2 Zeilen, 5x7 Dots
@@ -168,8 +184,8 @@ void LCD_send(char data)
 		if (temp & 0b00010000) {PORTLCD = PORTLCD | (1<<DB4);}
 		else {PORTLCD = PORTLCD & ~(1<<DB4);}
 
-		Enable();
-		delay_ms(1);
+		Enable2();
+		//delay_ms(1);
 
 		//Lower Nibble senden
 		if (temp & 0b00001000) {PORTLCD = PORTLCD | (1<<DB7);}
@@ -184,8 +200,8 @@ void LCD_send(char data)
 		if (temp & 0b00000001) {PORTLCD = PORTLCD | (1<<DB4);}
 		else {PORTLCD = PORTLCD & ~(1<<DB4);}
 
-		Enable();
-		delay_ms(1);
+		Enable2();
+		//delay_ms(1);
 
 }
 
@@ -213,8 +229,8 @@ void LCD_cmd(char data)
 		if (temp & 0b00010000) {PORTLCD = PORTLCD | (1<<DB4);}
 		else {PORTLCD = PORTLCD & ~(1<<DB4);}
 
-		Enable();
-		delay_ms(1);
+		Enable3();
+		//delay_ms(1);
 
 		//Lower Nibble senden
 		if (temp & 0b00001000) {PORTLCD = PORTLCD | (1<<DB7);}
@@ -229,8 +245,8 @@ void LCD_cmd(char data)
 		if (temp & 0b00000001) {PORTLCD = PORTLCD | (1<<DB4);}
 		else {PORTLCD = PORTLCD & ~(1<<DB4);}
 
-		Enable();
-		delay_ms(1);
+		Enable3();
+		//delay_ms(1);
 
 }
 
