@@ -14,6 +14,7 @@
 
 void allinit(void);
 unsigned short int RechteDrehzahlmessung(void);
+void LCDAusgabe(int *Wert);
 
 
 #endif /* MOTORANSTEUERUNG_H_ */

@@ -25,6 +25,7 @@ void allinit(void)
 	LCD_cmd(0x0C);
 
 	DDRB = DDRB | (1<<DDB7); //PB7 OUTPUT (LED)
+	PORTB = PORTB |(1<<PORTB7);//LED ausschalten
 
 	DDRC = DDRC | (1<<DDC7); //OC4A -Pin (PC7) als OUTPUT Timer4
 	DDRB = DDRB | (1<<DDB6);//OC4B -Pin (PB6) als Output Timer4
@@ -128,5 +129,23 @@ unsigned short int RechteDrehzahlmessung(void)
 
 
 	return(drehzahl);
+}
+void LCDAusgabe(int *Wert)
+{
+    char buffer[20];
+    int Hilf = 0;
+
+    LCD_cmd(0x80);
+    Hilf = *Wert/100;
+    itoa(Hilf, buffer,10);
+    LCD_string(buffer);
+    LCD_cmd(0x81);
+    Hilf = (Hilf * 100 - *Wert) /10;
+
+
+    *Wert++;
+    LCD_cmd(0x8d);
+    itoa(*Wert, buffer,10);
+    LCD_string(buffer);
 }
 

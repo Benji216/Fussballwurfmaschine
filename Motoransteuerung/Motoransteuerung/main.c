@@ -13,22 +13,17 @@ unsigned char dutyh = 0;
 unsigned short int timer0h = 0;
 unsigned short int timer0zeit = 0;
 unsigned char drehmessh = 0;
-unsigned int drehzahl;
+unsigned int drehzahlr = 0;
+unsigned int drehzahll = 0;
 
 int main (void)
 {
-    char buffer[20];    //Wird benötigt um am LCD Ziffern auszugeben
+    int Wert[4];
+    //char buffer[20];    //Wird benötigt um am LCD Ziffern auszugeben
 	allinit();
 
 	while(1)
 	{
-        drehzahl = RechteDrehzahlmessung();
-
-        LCD_cmd(0x01); // LCD löschen
-        LCD_cmd(0x80); //gehe zu 2. Zeile, 6. Position
-        itoa (drehzahl, buffer, 10);
-        LCD_string(buffer);
-
 		if(duty1 >= 0 && duty1 <= 100)
 		{
 			OCR4A = duty1 *  2;//PWM1 Tastverhältnis einstellen PC7
@@ -40,19 +35,15 @@ int main (void)
 
 		/*if(drehmessh)
         {
-            unsigned int drehzahl;
-            drehzahl = RechteDrehzahlmessung();
-            LCD_cmd(0xC5); //gehe zu 2. Zeile, 6. Position
-            itoa (drehzahl, buffer, 10);
-            LCD_string(buffer);
-            if(drehzahl < (MAXDREHZAHL/100 * LCDduty1)) // dreht sich zu langsam
+            drehzahlr = RechteDrehzahlmessung();
+            if(drehzahlr < (MAXDREHZAHL/100 * LCDduty1)) // dreht sich zu langsam
             {
                 if(duty1 <100)
                 {
                     duty1++;
                 }
             }
-            else if(drehzahl > (MAXDREHZAHL/100 * LCDduty1)) // dreht sich zu schnell
+            else if(drehzahlr > (MAXDREHZAHL/100 * LCDduty1)) // dreht sich zu schnell
             {
                 if(duty1 >0)
                 {
@@ -64,6 +55,12 @@ int main (void)
                 drehmessh = 0; //drehmessung beenden
             }
         }*/
+       Wert[0] = duty1;
+       Wert[1] = duty2;
+       Wert[2] = drehzahlr;
+       Wert[3] = drehzahll;
+
+       LCDAusgabe(Wert);
 	}
 	return 0;
 }
