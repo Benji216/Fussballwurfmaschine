@@ -54,11 +54,12 @@ void allinit(void)
 	TCCR4A = TCCR4A | (1<<COM4B0); //COM4B1:0=3, invert OC4B(PB6) Pin ein
 
 
-	//TCCR4D = TCCR4D | (1<<FPEN4);//Fault Protection Enable
+	TCCR4D = TCCR4D | (1<<FPEN4);//Fault Protection Enable
 	TCCR4D = TCCR4D | (1<<FPIE4); //Fault Protection Interrupt Enable
 	ADCSRA = ADCSRA &~(1<<ADEN); //ADC aus Komparator ein
 	TCCR4D = TCCR4D | (1<<FPAC4);// Analog comparator für AIN+ auswählen
 	ADCSRB = ADCSRB | (1<<ACME); //AIN- hängt am ADC Multiplexer
+	ADMUX = ADMUX | (1<<MUX2); //ADC4 als AIN- Input wählen
 
 	OCR4C = 200; //TOP für f_PWM = 10 kHz, f_PWM = f_CLK_T4/OCR4C
 
@@ -133,19 +134,34 @@ unsigned short int RechteDrehzahlmessung(void)
 void LCDAusgabe(int *Wert)
 {
     char buffer[20];
-    int Hilf = 0;
+    int hilf;
+    char ausg;
+    char stelle;
+    int i;
 
-    LCD_cmd(0x80);
-    Hilf = *Wert/100;
-    itoa(Hilf, buffer,10);
-    LCD_string(buffer);
-    LCD_cmd(0x81);
-    Hilf = (Hilf * 100 - *Wert) /10;
+    stelle = 0x80;
+    hilf = *Wert;
+    for(i=100;i>0;i= i/10)
+    {
+        ausg = hilf /i;
+        LCD_cmd(stelle);
+        itoa(ausg, buffer,10);
+        LCD_string(buffer);
+        hilf = hilf - ausg * i;
+        stelle++;
+    }
 
-
-    *Wert++;
-    LCD_cmd(0x8d);
-    itoa(*Wert, buffer,10);
-    LCD_string(buffer);
+    Wert++;
+    stelle = 0x8d;
+    hilf = *Wert;
+    for(i=100;i>0;i= i/10)
+    {
+        ausg = hilf /i;
+        LCD_cmd(stelle);
+        itoa(ausg, buffer,10);
+        LCD_string(buffer);
+        hilf = hilf - ausg * i;
+        stelle++;
+    }
 }
 

@@ -11,6 +11,10 @@
 
 #define MAXDREHZAHL 2500
 #define VCC 5
+#define Taster1 1
+#define Taster2 2
+#define Taster3 3
+#define Taster4 4
 
 void allinit(void);
 unsigned short int RechteDrehzahlmessung(void);
